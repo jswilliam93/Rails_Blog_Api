@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
 include ActionController::HttpAuthentication::Basic::ControllerMethods
 include ActionController::HttpAuthentication::Token::ControllerMethods
 
-before_filter :authenticate_user_from_token, except: [:token]
+#before_filter :authenticate_user_from_token, except: [:token]
 
 private
 

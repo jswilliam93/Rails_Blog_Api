@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.where(comment_params)
 
     render json: @comments
   end
@@ -54,6 +54,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:body, :user_id, :post_id)
+      params.permit(:body, :user_id, :post_id)
     end
 end
